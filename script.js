@@ -8,8 +8,16 @@ const perguntas = [
     {
         enunciado: "Neymar (1992) é um futebolista brasileiro, considerado um dos maiores da história. Ganhou diversos títulos jogando pelo Santos Futebol Clube, onde iniciou sua carreira aos 11 anos de idade. Sua posição é atacante, atuando como ponta-esquerda. Neymar jogou em diversos times.",
         alternativas: [
-            "Isso é maravilhoso!",
-            "Isso é assustador!"
+            {
+                texto: "Isso é maravilhoso!",
+                afirmacao: "afirmacao"
+            },
+            {
+                texto: "Isso é assustador!",
+                afirmacao: "afirmacao"
+            }
+            
+            
         ]
     },
     {
