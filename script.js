@@ -17,20 +17,32 @@ const perguntas = [
                 afirmacao: "afirmacao"
             }
             
-            
         ]
     },
     {
         enunciado: "Neymar é brasileiro ?",
         alternativas: [
-            "Sim.",
-            "Não."
-        ]
-    },
-    {
-        enunciado: "Você considera o Neymar um dos maiore sda história ?",
+            {
+                texto: 
+                afirmacao: "afirmacao"
+            },
+            {
+                texto: "Não.",
+                afirmacao: "afirmacao"
+            }
+
+            ]
+        },
+        {
+        enunciado: "Você considera o Neymar um dos maiores da história do futebol ?",
         alternativas: [
-            "Sim.",
+            {
+                texto: "Sim.",
+                afirmacao: "afirmacao"
+            },
+            {
+                texto: 
+            }    
             "Não"
         ]
     },
