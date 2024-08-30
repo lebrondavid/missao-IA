@@ -41,40 +41,77 @@ const perguntas = [
                 afirmacao: "afirmacao"
             },
             {
-                texto: 
+                texto: "Não.",
+                afirmacao: "afirmacao"
             }    
-            "Não"
+            
         ]
     },
     {
         enunciado: "Quantos títulos o Neymar ganhu pelo Santos Futebol Clube ?",
         alternativas: [
-            "6",
-            "3"
+            {
+                texto: "6",
+                afirmacao: "afirmacao"
+            },
+            {
+                texto: "3",
+                afirmacao: "afirmacao"
+            }
+
         ]
     },
     {
         enunciado: "Com quantos anos Neymar começou sua carreira pelo santos ?",
         alternativas: [
-            "11 anos de idade",
-            "16 anos de idade"
+            {
+                texto: "11 anos de idade",
+                afirmacao: "afirmacao"
+            },
+            {
+                texto: "16 anos de idade",
+                afirmacao: "afirmacao"
+            }
+            
         ]
     },
 ];
 
 let atual = 0;
 let perguntaAtual;
+let histtoriaFinal= "";
 
-function mostrarPergunta() {
+function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
-    caixaPergunta. textContent = perguntaAtual.enunciado;
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
     mostraAlternativas();
 }
 
-function mostrarPergunta(){
-    for(conts alternativa of perguntaAtual.alternativas){
-        const botaoAlternativas = document.createElement
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 
-mostrarPergunta();
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado() {
+    caixaPerguntas.textContent = "Em 2049...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
+}
+
+mostraPergunta();
